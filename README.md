@@ -28,7 +28,7 @@ The project relies on a dataset named `Restaurant_Reviews.tsv`.
 
 ## Methodology
 1. Data Preprocessing
-Raw text data is noisy. The following steps are taken to clean it:
+* Raw text data is noisy. The following steps are taken to clean it:
 
 * **Regex Cleaning:** Removing non-alphabetic characters (punctuation, numbers, emojis).
 
@@ -36,12 +36,12 @@ Raw text data is noisy. The following steps are taken to clean it:
 
 * **Stopword Removal:** Common English words (e.g., "the", "is", "in") are removed to reduce noise.
 
-Note: The word "not" is explicitly excluded from the stopword list to preserve negative context (e.g., "not good").
+### Note: The word "not" is explicitly excluded from the stopword list to preserve negative context (e.g., "not good").
 
 * **Lemmatization:** Converting words to their base root form (e.g., "loved" -> "love") using WordNetLemmatizer.
 
 2. Feature Engineering
-Bag of Words Model: We use CountVectorizer to convert text into a matrix of token counts.
+* Bag of Words Model: We use CountVectorizer to convert text into a matrix of token counts.
 
 * **Max Features:** Limited to the top 1,500 most frequent words to optimize performance and reduce dimensionality.
 
@@ -50,8 +50,8 @@ Bag of Words Model: We use CountVectorizer to convert text into a matrix of toke
 
 * **Classifier:** Multinomial Naive Bayes is used, which is highly effective for text classification with discrete features.
 
-* 4. Hyperparameter Tuning
-The script iterates through alpha values (smoothing parameter) from 0.1 to 1.0 to find the model with the highest accuracy.
+4. Hyperparameter Tuning
+* The script iterates through alpha values (smoothing parameter) from 0.1 to 1.0 to find the model with the highest accuracy.
 
 ## Evaluation Results
 The model performance is evaluated using:
