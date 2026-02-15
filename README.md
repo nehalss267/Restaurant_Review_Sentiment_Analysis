@@ -27,7 +27,7 @@ The project relies on a dataset named `Restaurant_Reviews.tsv`.
 * **Matplotlib & Seaborn:** For visualizing the Confusion Matrix.
 
 ## Methodology
-* 1. Data Preprocessing
+1. Data Preprocessing
 Raw text data is noisy. The following steps are taken to clean it:
 
 * **Regex Cleaning:** Removing non-alphabetic characters (punctuation, numbers, emojis).
@@ -40,15 +40,15 @@ Note: The word "not" is explicitly excluded from the stopword list to preserve n
 
 * **Lemmatization:** Converting words to their base root form (e.g., "loved" -> "love") using WordNetLemmatizer.
 
-* 2. Feature Engineering
+2. Feature Engineering
 Bag of Words Model: We use CountVectorizer to convert text into a matrix of token counts.
 
 * **Max Features:** Limited to the top 1,500 most frequent words to optimize performance and reduce dimensionality.
 
-* 3. Model Training
-Split: The dataset is split 80% for training and 20% for testing.
+3. Model Training
+* **Split:** The dataset is split 80% for training and 20% for testing.
 
-Classifier: Multinomial Naive Bayes is used, which is highly effective for text classification with discrete features.
+* **Classifier:** Multinomial Naive Bayes is used, which is highly effective for text classification with discrete features.
 
 * 4. Hyperparameter Tuning
 The script iterates through alpha values (smoothing parameter) from 0.1 to 1.0 to find the model with the highest accuracy.
@@ -70,13 +70,14 @@ The model performance is evaluated using:
 * **Make Predictions:** The script includes a sentiment_analysis() function to test new, custom reviews.
 
 Example Code
-Python
+```python
 sample_review = 'The food was absolutely wonderful'
 
 if sentiment_analysis(sample_review):
     print("Positive Sentiment")
 else:
     print("Negative Sentiment")
+```
 
 ## 🛠 Prerequisites
 
